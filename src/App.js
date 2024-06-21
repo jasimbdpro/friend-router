@@ -1,4 +1,4 @@
-import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Link, Route, HashRouter, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home/Home';
 import NoMatch from './components/NoMatch/NoMatch';
@@ -8,7 +8,7 @@ function App() {
 
   return (
 
-    <Router>
+    <HashRouter>
       <Link to='/'>Go Home</Link>
       <Routes>
         <Route exact path='/' element={<Home></Home>}></Route>
@@ -16,7 +16,7 @@ function App() {
         <Route path='/friend/:friendId' element={<FriendDetail></FriendDetail>}></Route>
         <Route exact path='*' element={<NoMatch></NoMatch>}></Route>
       </Routes>
-    </Router>
+    </HashRouter>
   );
 }
 
